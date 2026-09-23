@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ajudae/Telas/mural_tarefas.dart';
 import 'package:ajudae/Telas/perfil_prestador.dart';
+import 'package:ajudae/Telas/buscar_prestador.dart';
 
 // Função principal: o equivalente exato ao int main() do C
 void main() {
@@ -19,7 +20,7 @@ class AjudaEApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: TelaPerfilPrestador(prestador: prestadoresDeTeste[0]), // Aponta para a tela inicial do app, que é a tela de mural de tarefas
+      home: const BuscarPrestadores(), // Aponta para a tela inicial do app, que é a tela de mural de tarefas
     );
   }
 }

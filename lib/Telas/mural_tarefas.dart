@@ -1,8 +1,9 @@
-//Aqui é a parte do FrontEnd onde vai ser exibido o mural de tarefas.
 
 import 'package:flutter/material.dart';
 import 'package:ajudae/models/estruturas.dart';
+import 'package:ajudae/Telas/perfil_prestador.dart';
 
+//Dados fictícios para teste, que serão substituídos pelos dados reais do BackEnd quando o app estiver em produção.
 List<Tarefa> tarefasDeTeste = 
 [
   Tarefa(
@@ -10,27 +11,51 @@ List<Tarefa> tarefasDeTeste =
     titulo: 'Vazamento no sifão da pia',
     descricao: 'A pia da cozinha está a pingar constantemente. Preciso de troca do sifão.',
     categoria: 'Encanador',
-    latitude: -11.3032, // Coordenadas de exemplo perto de Irecê
-    longitude: -41.8569,
+
+    enderecoTarefa: Endereco(
+      rua: 'Rua das Flores',
+      numero: '123',
+      bairro: 'Centro',
+      cep: '44900-000',
+      latitude: -11.3032,
+      longitude: -41.8569,
+    ),
   ),
+
   Tarefa(
     id: '2',
     titulo: 'Tomada em curto',
     descricao: 'A tomada do quarto está a fazer faíscas. Preciso de reparação urgente.',
     categoria: 'Eletricista',
-    latitude: -11.3060,
-    longitude: -41.8580,
+
+    enderecoTarefa: Endereco(
+      rua: 'Rua do Sol',
+      numero: '456',
+      bairro: 'Jardim das Flores',
+      cep: '44900-000',
+      latitude: -11.3040,
+      longitude: -41.8575,
+    ),
   ),
+
   Tarefa(
     id: '3',
     titulo: 'Pintura de fachada',
     descricao: 'Necessito de pintar a entrada do meu comércio. Área de 5x3 metros.',
     categoria: 'Pintor',
-    latitude: -11.3000,
-    longitude: -41.8500,
+
+    enderecoTarefa: Endereco(
+      rua: 'Rua das Dores',
+      numero: '789',
+      bairro: 'Centro',
+      cep: '44900-000',
+      latitude: -11.3050,
+      longitude: -41.8570,
+    ),
   ),
 ];
 
+//FrontEnd meche aqui, essa tela é a tela de mural de tarefas, que exibe as tarefas disponíveis para os prestadores de serviço.
 class MuralTarefas extends StatelessWidget {
   const MuralTarefas({super.key});
 
@@ -51,6 +76,16 @@ class MuralTarefas extends StatelessWidget {
               leading: const Icon(Icons.build), 
               title: Text(tarefa.titulo), // Acessando os atributos do objeto usando "."
               subtitle: Text('${tarefa.categoria} • ID: ${tarefa.id}'), 
+
+              onTap: () {
+                // Ao clicar na tarefa, navega para a tela de perfil do prestador fictício
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => TelaPerfilPrestador(prestador: prestadoresDeTeste[0]),
+                  ),
+                );
+              },
             ),
           );
         },

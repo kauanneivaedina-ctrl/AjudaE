@@ -1,29 +1,44 @@
 //Esse arquivo contém as estruturas de dados utilizadas no app, quem vai mexer aqui é a equipe BackEnd (Kauan e Artur) principalmente.
+class Endereco{
+  String rua;
+  String numero;
+  String bairro;
+  String cep;
+  double latitude;
+  double longitude;
+
+  Endereco({
+    required this.rua,
+    required this.numero,
+    required this.bairro,
+    required this.cep,
+    required this.latitude,
+    required this.longitude,
+  });
+}
 
 class Tarefa{
   String id;
   String titulo;
   String descricao;
   String categoria;
-  double latitude;
-  double longitude;
+  Endereco enderecoTarefa;
 
   Tarefa({
     required this.id,
     required this.titulo,
     required this.descricao,
     required this.categoria,
-    required this.latitude,
-    required this.longitude,
+    required this.enderecoTarefa,
   });
 }
 
-class avaliacao{
+class Avaliacao{
   String id;
   String comentario;
   double nota;
 
-  avaliacao({
+  Avaliacao({
     required this.id,
     required this.comentario,
     required this.nota,
@@ -32,8 +47,9 @@ class avaliacao{
 
 class Prestador{
   String nome;
-  List<avaliacao>  avaliacoes;
+  List<Avaliacao>  avaliacoes;
   String UrlFoto;
+  String categoria;
 
   double get mediaNotas
   {
@@ -52,6 +68,7 @@ class Prestador{
     required this.nome,
     required this.avaliacoes,
     required this.UrlFoto,
+    required this.categoria,
   });
 }
 

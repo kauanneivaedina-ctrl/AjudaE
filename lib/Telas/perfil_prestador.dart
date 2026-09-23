@@ -1,26 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:ajudae/models/estruturas.dart';
 
+
+//Dados fictícios para teste, que serão substituídos pelos dados reais do BackEnd quando o app estiver em produção.
 List<Prestador> prestadoresDeTeste = 
 [
   Prestador(
     nome: 'João Silva',
     avaliacoes: [
-      avaliacao(id: '1', comentario: 'Serviço excelente!', nota: 5.0),
-      avaliacao(id: '2', comentario: 'Muito profissional.', nota: 4.5),
+      Avaliacao(id: '1', comentario: 'Serviço excelente!', nota: 5.0),
+      Avaliacao(id: '2', comentario: 'Muito profissional.', nota: 4.5),
     ],
     UrlFoto: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+    categoria: 'Encanador',
   ),
   Prestador(
     nome: 'Maria Oliveira',
     avaliacoes: [
-      avaliacao(id: '3', comentario: 'Atendimento rápido e eficiente.', nota: 4.0),
-      avaliacao(id: '4', comentario: 'Recomendo!', nota: 4.8),
+      Avaliacao(id: '3', comentario: 'Atendimento rápido e eficiente.', nota: 4.0),
+      Avaliacao(id: '4', comentario: 'Recomendo!', nota: 4.8),
     ],
     UrlFoto: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+    categoria: 'Eletricista',
   ),
 ];
 
+//A tela de perfil do prestador, que exibe o nome, a média das avaliações e os comentários dos clientes, FrontEnd meche aqui.
 class TelaPerfilPrestador extends StatelessWidget {
   // A classe recebe o Prestador para o qual deve gerar o ecrã
   final Prestador prestador;
@@ -52,6 +57,10 @@ class TelaPerfilPrestador extends StatelessWidget {
                     Text(
                       prestador.nome,
                       style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      prestador.categoria,
+                      style: const TextStyle(fontSize: 18, color: Colors.grey),
                     ),
                     Text(
                       'Média: ${prestador.mediaNotas.toStringAsFixed(1)} ⭐', 
