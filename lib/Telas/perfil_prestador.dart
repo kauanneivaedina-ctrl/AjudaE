@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ajudae/models/estruturas.dart';
+import 'package:ajudae/models/avaliacao.dart';
+import 'package:ajudae/models/prestador.dart';
 
 
 //Dados fictícios para teste, que serão substituídos pelos dados reais do BackEnd quando o app estiver em produção.

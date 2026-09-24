@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:ajudae/models/estruturas.dart';
+import 'package:ajudae/models/prestador.dart';
 import 'package:ajudae/Telas/perfil_prestador.dart';
 
 //FrontEnd meche aqui, essa tela é a tela de busca de prestadores de serviço, que exibe os prestadores disponíveis para o usuário.
 class BuscarPrestadores extends StatefulWidget {
   const BuscarPrestadores({super.key});
+  @override
   State<BuscarPrestadores> createState() => _BuscarPrestadoresState();
 }
 
@@ -32,6 +33,7 @@ class _BuscarPrestadoresState extends State<BuscarPrestadores>
   }
 
   //parte visual do bagulho
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Procurar Profissionais')),

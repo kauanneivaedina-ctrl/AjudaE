@@ -1,7 +1,8 @@
 
 import 'package:flutter/material.dart';
-import 'package:ajudae/models/estruturas.dart';
-import 'package:ajudae/Telas/perfil_prestador.dart';
+import 'package:ajudae/models/endereco.dart';
+import 'package:ajudae/models/tarefa.dart';
+import 'package:ajudae/Telas/tarefa_atual.dart';
 
 //Dados fictícios para teste, que serão substituídos pelos dados reais do BackEnd quando o app estiver em produção.
 List<Tarefa> tarefasDeTeste = 
@@ -82,7 +83,7 @@ class MuralTarefas extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => TelaPerfilPrestador(prestador: prestadoresDeTeste[0]),
+                    builder: (context) => TarefaAtual(tarefa: tarefa), // Passa a tarefa atual para a próxima tela
                   ),
                 );
               },
